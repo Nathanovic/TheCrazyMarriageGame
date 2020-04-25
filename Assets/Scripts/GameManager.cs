@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+[DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour {
 
 	public static GameManager Instance {
@@ -13,13 +13,15 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private static GameManager instance;
-    
-    private void Awake() {
-		    
-    }
+	
+	public bool IsPlaying { get; private set; }
 
-    private void Update() {
-	 
+	public void Pause(bool isPaused) {
+		IsPlaying = !isPaused;
+	}
+
+    private void Awake() {
+		IsPlaying = true;
     }
 
 }
