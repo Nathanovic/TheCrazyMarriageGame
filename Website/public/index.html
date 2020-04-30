@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<title>Nathan & Arjanna</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGLBuild.json", {onProgress: UnityProgress});
+    </script>
+</head>
+
+<body>
+	<h1>Meer info volgt nog!</h1>
+	<button type="button" class="btn btn-primary">Primary</button>
+	<button type="button" class="btn btn-primary align-bottom btn-lg mr-1">Large</button>
+	<img class="" src="images\SelfieWaa.JPG" alt="environment">
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 100%"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">The Crazy Marriage</div>
+      </div>
+    </div>
+</body>
+
+<script src="js/bootstrap.min.js"/>
+</html>
+
+<!-- 
+TODO:
+- uitzoeken hoe te customizen met bootstrap
+- domeinnaam hosten firebase
+- icon
+- art implementeren
+- bootstrap customizen
+-->
