@@ -2375,7 +2375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2651b64abb0e804bad6aa0663a2d02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startImmediateInEditor: 0
+  startImmediateInEditor: 1
 --- !u!225 &1901378016
 CanvasGroup:
   m_ObjectHideFlags: 0
