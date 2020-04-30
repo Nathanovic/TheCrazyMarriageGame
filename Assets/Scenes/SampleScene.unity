@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 39099781}
   - component: {fileID: 39099780}
   - component: {fileID: 39099779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 39099778}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 41091948}
   - component: {fileID: 41091947}
   - component: {fileID: 41091946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 41091945}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -328,7 +328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41091945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.73, y: 0.55, z: 0}
+  m_LocalPosition: {x: 4.14, y: -2.44, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 583196079}
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 156548263}
   - component: {fileID: 156548262}
   - component: {fileID: 156548261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 156548260}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -755,7 +755,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334d9676f8904ea428646afddcf5e0d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
+  MoveSpeed: 7
+  MovementSmoothing: 0.1
+  JumpForce: 300
+  GroundCheck: {fileID: 1642048558}
+  GroundCheckMask:
+    serializedVersion: 2
+    m_Bits: 256
+  spriteRenderer: {fileID: 1246756507}
+  GroundCheckSize: {x: 0.3, y: 0.1}
+  ControlInAir: 1
+  GroundCheckDistance: 0.05
+  MaxJumpButtonCorrectionTime: 0.14
 --- !u!4 &468267539
 Transform:
   m_ObjectHideFlags: 0
@@ -764,11 +775,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468267537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.7, z: 0}
+  m_LocalPosition: {x: -0.336, y: -1.705, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1246756506}
   - {fileID: 519420032}
+  - {fileID: 1642048558}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -817,7 +829,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &519420028
 GameObject:
@@ -957,7 +969,7 @@ GameObject:
   - component: {fileID: 850126795}
   - component: {fileID: 850126794}
   - component: {fileID: 850126793}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -973,7 +985,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 850126792}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1064,7 +1076,7 @@ GameObject:
   - component: {fileID: 915909670}
   - component: {fileID: 915909669}
   - component: {fileID: 915909668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1092,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 915909667}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1171,7 +1183,7 @@ GameObject:
   - component: {fileID: 1012647186}
   - component: {fileID: 1012647185}
   - component: {fileID: 1012647184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1187,7 +1199,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1012647183}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1379,7 +1391,7 @@ GameObject:
   - component: {fileID: 1360552213}
   - component: {fileID: 1360552212}
   - component: {fileID: 1360552211}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1407,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1360552210}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1486,7 +1498,7 @@ GameObject:
   - component: {fileID: 1464731064}
   - component: {fileID: 1464731063}
   - component: {fileID: 1464731062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,7 +1514,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1464731061}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1593,7 +1605,7 @@ GameObject:
   - component: {fileID: 1511267575}
   - component: {fileID: 1511267574}
   - component: {fileID: 1511267573}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1609,7 +1621,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1511267572}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1865,7 +1877,7 @@ GameObject:
   - component: {fileID: 1636477400}
   - component: {fileID: 1636477399}
   - component: {fileID: 1636477398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1881,7 +1893,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1636477397}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1961,6 +1973,36 @@ Transform:
   m_Father: {fileID: 583196079}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1642048557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1642048558}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1642048558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642048557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.922, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 468267539}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673719792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,7 +2014,7 @@ GameObject:
   - component: {fileID: 1673719795}
   - component: {fileID: 1673719794}
   - component: {fileID: 1673719793}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1988,7 +2030,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1673719792}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2079,7 +2121,7 @@ GameObject:
   - component: {fileID: 1770583346}
   - component: {fileID: 1770583345}
   - component: {fileID: 1770583344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2095,7 +2137,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1770583343}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2186,7 +2228,7 @@ GameObject:
   - component: {fileID: 1836024737}
   - component: {fileID: 1836024736}
   - component: {fileID: 1836024735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2202,7 +2244,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1836024734}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2400,7 +2442,7 @@ GameObject:
   - component: {fileID: 2102520924}
   - component: {fileID: 2102520923}
   - component: {fileID: 2102520922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2416,7 +2458,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2102520921}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40d344ff260f22142ae3fe370ac9162e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
