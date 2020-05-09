@@ -3,7 +3,8 @@
 }
 
 .titleBarImage{
-	height: 200px;
+	margin-top: 2rem;
+	padding: 20px 0 20px 0;
 	width: auto;
 	background-image: url("../images/titleBar.png");
 	background-size: cover;
@@ -11,11 +12,34 @@
 	background-repeat: no-repeat;
 }
 
-.masthead {
-  height: 100vh;
-  min-height: 500px;
-  background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+@font-face {
+	font-family: flashbackDemo;
+	src: url("../fonts/flashbackDemo.ttf") format("truetype");
+}
+
+h1{
+	font-family: flashbackDemo  !important;
+	font-size: 180px;
+}
+
+@media only screen and (max-width: 1100px) { 
+	.titleBarImage{
+		margin-top: 0;
+		padding: 10px 0 10px 0;
+	}
+
+	h1 {
+		font-size: 110px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.titleBarImage{
+		margin-top: 0;
+		padding: 5px 0 5px 0;
+	}
+
+	h1 {
+		font-size: 80px;
+	}
 }
