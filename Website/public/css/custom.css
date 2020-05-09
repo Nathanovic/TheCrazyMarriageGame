@@ -1,0 +1,21 @@
+.titleBar{
+	/*background-image: url("../images/titleBar.png");*/
+}
+
+.titleBarImage{
+	height: 200px;
+	width: auto;
+	background-image: url("../images/titleBar.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
