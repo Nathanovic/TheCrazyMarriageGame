@@ -24,6 +24,7 @@
 .woodInfoBar{
 	padding: 15px 0 15px 0;
 	width: auto;
+	min-width: 100%;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -31,6 +32,13 @@
 
 .container{
 	font-family: typewriter !important;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 html, body {
