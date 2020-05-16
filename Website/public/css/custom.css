@@ -10,6 +10,7 @@
 
 #titleBar{
 	background-image: url("../images/woodBackground.png");	
+	height: 150px;
 }
 
 #topSpacing{
@@ -21,44 +22,69 @@
 	background-image: url("../images/woodBackgroundSmall.png");	
 }
 
-.woodInfoBar{
-	padding: 15px 0 15px 0;
-	width: auto;
-	min-width: 100%;
+.imageContainer{/*1,48666667*/
+	height:743px;/*1115*/
+	width:500px;/*750*/
+	margin:0 auto;
+}
+
+#saveTheDateImg{
+	background-image: url("../images/saveTheDate.png");	
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
 }
 
-.container{
-	font-family: typewriter !important;
+.woodInfoBar{
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+        vertical-align: middle;
+}
+
+#wrapper{
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -70px;
+}
+
+#bottomBar, .overlap, h2{
+	height:70px;
 }
 
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 html, body {
+	height: 100%;
 	margin: 0 !important;
 	padding: 0 !important;
 }
 
 h1{
-	font-family: flashbackDemo  !important;
-	font-size: 180px;
+	font-family: flashbackDemo !important;
+	font-size: 130px;
 }
 
 h2 {
-	font-size: 61px;
+	font-size: 35px;
+}
+
+h2, p {
+	font-family: typewriter !important;	
 }
 
 @media only screen and (max-width: 1100px) { 
 	.woodInfoBar{
 		margin-top: 0;
-		padding: 10px 0 10px 0;
 	}
 
 	h1 {
@@ -73,7 +99,6 @@ h2 {
 @media only screen and (max-width: 600px) {
 	.woodInfoBar{
 		margin-top: 0;
-		padding: 5px 0 5px 0;
 	}
 
 	#topSpacing {
