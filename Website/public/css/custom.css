@@ -63,7 +63,7 @@ p, h2, h3, h4 {
 
 /* Other */
 #saveTheDateImg{
-	background-image: url("../images/saveTheDateWithoutLeaves.png");
+	background-image: url("../images/saveTheDate.jpg");
 	max-width: 100% !important;	
 	background-size: cover;
 	background-position: center;
@@ -81,9 +81,9 @@ p, h2, h3, h4 {
 	}
 
 	#saveTheDateImg{	
-		height:880px;
-		width:600px;
-		margin:2rem auto;
+		width:360px;
+		height:800px;
+		margin:4rem auto;
 	}
 	
 	#titleBar{
@@ -109,9 +109,9 @@ p, h2, h3, h4 {
 	}
 
 	#saveTheDateImg{	
-		height:880px;
-		width:600px;
-		margin: 0 auto;
+		width:360px;
+		height:800px;
+		margin: 2rem auto;
 	}
 	
 	#titleBar{
@@ -139,8 +139,9 @@ p, h2, h3, h4 {
 	}
 
 	#saveTheDateImg{	
-		width: 500px;
-		height: 733px;
+		width: 315px;
+		height: 700px;
+		margin: 1rem auto;
 	}
 	
 	#titleBar{
