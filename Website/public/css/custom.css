@@ -25,7 +25,7 @@
 .imageContainer{/*1,48666667*/
 	height:743px;/*1115*/
 	width:500px;/*750*/
-	margin:0 auto;
+	margin:2rem auto 2rem auto;
 }
 
 #saveTheDateImg{
@@ -42,7 +42,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-        vertical-align: middle;
+    text-align: center;
 }
 
 #wrapper{
@@ -52,8 +52,13 @@
 	margin: 0 auto -70px;
 }
 
-#bottomBar, .overlap, h2{
+body{
+	background-color: #ded2b7;
+}
+
+#bottomBar, .overlap{
 	height:70px;
+	padding: 13px 0;
 }
 
 html {
@@ -83,34 +88,45 @@ h2, p {
 }
 
 @media only screen and (max-width: 1100px) { 
-	.woodInfoBar{
-		margin-top: 0;
+	#titleBar{
+		height: 100px;		
 	}
 
 	h1 {
-		font-size: 110px;
+		font-size: 85px;
 	}
 
 	h2 {
-		font-size: 45px;
+		font-size: 28px;
 	}
 }
 
 @media only screen and (max-width: 600px) {
-	.woodInfoBar{
-		margin-top: 0;
-	}
-
 	#topSpacing {
 		height: 0;
 	}
 	
-	h1 {
-		font-size: 80px;
+	.imageContainer{
+		margin: 0 auto;
 	}
 	
+	#titleBar{
+		height: 80px;		
+	}
+	
+	#wrapper{
+		margin: 0 auto -50px;
+	}
 
+	#bottomBar, .overlap{
+		height:50px;
+	}
+	
+	h1 {
+		font-size: 70px;
+	}
+	
 	h2 {
-		font-size: 35px;
+		font-size: 20px;
 	}
 }
