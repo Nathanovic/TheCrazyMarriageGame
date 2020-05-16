@@ -55,10 +55,10 @@ p, h2, h3, h4 {
     justify-content: center; /* vertical */	
 }
 #titleBar{
-	background-image: url("../images/woodBackground.png");	
+	background-image: url("../images/woodBackground.jpg");	
 }
 #bottomBar{
-	background-image: url("../images/woodBackgroundSmall.png");
+	background-image: url("../images/woodBackgroundSmall.jpg");
 }
 
 /* Other */
