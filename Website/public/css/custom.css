@@ -63,7 +63,8 @@ p, h2, h3, h4 {
 
 /* Other */
 #saveTheDateImg{
-	background-image: url("../images/saveTheDateWithoutLeaves.png");	
+	background-image: url("../images/saveTheDateWithoutLeaves.png");
+	max-width: 100% !important;	
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -104,7 +105,7 @@ p, h2, h3, h4 {
 }
 @media only screen and (max-width: 1100px) { 
 	.sideBar{
-		width: 300px;
+		width: 270px;
 	}
 
 	#saveTheDateImg{	
@@ -134,12 +135,12 @@ p, h2, h3, h4 {
 
 @media only screen and (max-width: 600px) {
 	.sideBar{
-		width: 200px;
+		width: 170px;
 	}
 
 	#saveTheDateImg{	
-		width: 100%;
-		height: calc(100vw * 1.467);
+		width: 500px;
+		height: 733px;
 	}
 	
 	#titleBar{
