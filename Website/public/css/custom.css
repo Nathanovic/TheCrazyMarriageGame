@@ -6,6 +6,7 @@ html {
   box-sizing: inherit;
 }
 html, body {
+	height: 100% !important;	
 	margin: 0 !important;
 	padding: 0 !important;
 	background-color: #ded2b7;
