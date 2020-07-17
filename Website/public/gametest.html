@@ -3,12 +3,27 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="css/bootstrap.css"/>
-	<title>Nathan & Arjanna</title>
+    <script src="js/bootstrap.min.js"></script>
+	<title>Nathan & Arjanna & Mama</title>
 </head>
 
 <body>
 	<h1>The Crazy Marriage Game:</h1>
+    <button onclick="toonDatum()" >Datum</button>   
+    <button onclick="Locatie()" >Locatie</button>
+    <button onclick="Route()" >Route</button>    
 </body>
+    
+<script type="text/javascript">
+    function Route() {
+        alert("https://www.google.nl/maps/dir/RCN+Vakantiepark+De+Jagerstee+-+Camping+en+bungalowpark,+Officiersweg+86,+8162+NR+Epe/Markt+2,+8051+EZ+Hattem/@52.4077429,5.9412894,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x47c7c5431a3a0299:0x876129ae6e08eba4!2m2!1d5.9586843!2d52.3637999!1m5!1m1!1s0x47c7d94d0ff870b5:0x8f24c4d99025558a!2m2!1d6.0699945!2d52.4744601");
+    }
+    function toonDatum() {
+        alert('31 oktober 2020');
+    }
+    function Locatie() {
+        alert("Avond: 19:00 uur" + "\n" + "Plaats: Camping De Jagerstee" + "\n" + "Adres: Officiersweg 86" + "\n" + "Epe");
+    }
+</script>
 
-<script src="js/bootstrap.min.js"/>
 </html>
