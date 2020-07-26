@@ -12,8 +12,7 @@
     <button onclick="toonDatum()" >Datum</button>   
     <button onclick="Locatie()" >Locatie</button>
     <button onclick="Route()" >Route</button>
-    <button onclick="toonAfbeelding('images/hond.jpg', 
-  276,110, 'Google Logo')">Add Google Logo</button>
+    <button onclick="toonAfbeelding('images/hond.jpg', 276, 220, 'Google Logo')">Add Google Logo</button>
 </body>
     
 <script type="text/javascript">
@@ -21,7 +20,7 @@
     
     
     function Route() {
-        alert("https://www.google.nl/maps/dir/RCN+Vakantiepark+De+Jagerstee+-+Camping+en+bungalowpark,+Officiersweg+86,+8162+NR+Epe/Markt+2,+8051+EZ+Hattem/@52.4077429,5.9412894,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x47c7c5431a3a0299:0x876129ae6e08eba4!2m2!1d5.9586843!2d52.3637999!1m5!1m1!1s0x47c7d94d0ff870b5:0x8f24c4d99025558a!2m2!1d6.0699945!2d52.4744601");
+        alert("https://www.google.nl/maps/dir/Markt+2,+8051+EZ+Hattem/RCN+Vakantiepark+De+Jagerstee+-+Camping+en+bungalowpark,+Officiersweg+86,+8162+NR+Epe/@52.404724,5.9378637,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x47c7d94d0ff870b5:0x8f24c4d99025558a!2m2!1d6.0699945!2d52.4744601!1m5!1m1!1s0x47c7c5431a3a0299:0x876129ae6e08eba4!2m2!1d5.9586843!2d52.3637999");
     }
     function toonDatum() {
         alert('31 oktober 2020');
@@ -34,17 +33,14 @@
       img.src = src;
       img.width = width;
       img.height = height;
-      img.alt = alt;
-        
-        if(a<1){
-            // This next line will just add it to the <body> tag
-            document.body.appendChild(img); 
-        }
-        else{
-            alert("we willen maar 1 afbeelding laten zien, sorry!")
-        }
-        a++;
-      
+      img.alt = alt;        
+      if (a<1) {
+      // This next line will just add it to the <body> tag
+      document.body.appendChild(img); 
+      a++;
+      } else {
+      alert("we willen maar 1 afbeelding laten zien, sorry!")
+      }
     }
                                
 </script>
