@@ -1,0 +1,14 @@
+#invitation{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 500px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    background-color: aqua;
+    display: none;
+}
+
+.infoText{
+    display: none;
+}

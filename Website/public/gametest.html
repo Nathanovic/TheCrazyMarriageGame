@@ -3,49 +3,53 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/gameLayout.css"/>
     <script src="js/bootstrap.min.js"></script>
 	<title>Nathan & Arjanna & Mama</title>
 </head>
 
 <body>
 	<h1>The Crazy Marriage Game:</h1>
-    <button onclick="toonDatum()" >Datum</button>   
-    <button onclick="Locatie()" >Locatie</button>
-    <button onclick="Route()" >Route</button>
-    <button onclick="toonAfbeelding('images/hond.jpg', 276, 220, 'Google Logo')">Add Google Logo</button>
+    <button onclick="OpenPopup(1)" >Kerkklok</button>   
+    <button onclick="OpenPopup(2)" >Kerkdeur</button>
+    <button onclick="ClosePopup()" >Oké!</button>
+    
+    <h1 id="popupCounter">0/5</h1>
+    
+    <!-- als de gebruiker op de kerk klok klikt: -->
+    <div id="invitation">
+        <h2>Kerk locatie:</h2>
+        <p class= "infoText" id="info-1">De kerkdienst begint om 12:00 uur.</p>
+        <h2>Kerk tijd:</h2>
+        <p class= "infoText" id="info-2">De kerkdienst begint om 12:00 uur.</p>
+        <h2>Dresscode:</h2>
+        <p class= "infoText" id="info-3">De kerkdienst begint om 12:00 uur.</p>
+        <h2>Maaltijd:</h2>
+        <p class= "infoText" id="info-4">De kerkdienst begint om 12:00 uur.</p>
+        <h2>Kerk locatie:</h2>
+        <p class= "infoText" id="info-5">De kerkdienst begint om 12:00 uur.</p>
+    </div>
 </body>
     
-<script type="text/javascript">
-    let a = 0;
+<script type="text/javascript">    
+    const MAX_POPUP_COUNT = 5;
     
+    let openPopup = null;
+    let openedPopups = [];
     
-    function Route() {
-        alert("https://www.google.nl/maps/dir/Markt+2,+8051+EZ+Hattem/RCN+Vakantiepark+De+Jagerstee+-+Camping+en+bungalowpark,+Officiersweg+86,+8162+NR+Epe/@52.404724,5.9378637,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x47c7d94d0ff870b5:0x8f24c4d99025558a!2m2!1d6.0699945!2d52.4744601!1m5!1m1!1s0x47c7c5431a3a0299:0x876129ae6e08eba4!2m2!1d5.9586843!2d52.3637999");
+    function OpenPopup(id){
+        document.getElementById("invitation").style.display = "block";
+        openPopup = document.getElementById("info-" + id);
+        openPopup.style.display = "inline";
+        if (!openedPopups.includes(id)){
+            openedPopups.push(id);
+            document.getElementById("popupCounter").innerHTML = openedPopups.length + "/" + MAX_POPUP_COUNT;
+        }
     }
-    function toonDatum() {
-        alert('31 oktober 2020');
+        
+    function ClosePopup(){
+        document.getElementById("invitation").style.display = "none";
     }
-    function Locatie() {
-        alert("Avond: 19:00 uur" + "\n" + "Plaats: Camping De Jagerstee" + "\n" + "Adres: Officiersweg 86" + "\n" + "Epe");
-    }                           
-    function toonAfbeelding(src, width, height, alt) {
-      var img = document.createElement("img");
-      img.src = src;
-      img.width = width;
-      img.height = height;
-      img.alt = alt;        
-      if (a<1) {
-      // This next line will just add it to the <body> tag
-      document.body.appendChild(img); 
-      a++;
-      } else {
-      alert("we willen maar 1 afbeelding laten zien, sorry!")
-      }
-    }
-       
-	// Code ziet er l een stuk beter uit mam, maar het kan nog netter.
-	// Probeer consistent te zijn met het gebruik van tabs: binnen elke if/else en binnen elke functie een extra tab!
-	// Ook is 'a' totaal niet beschrijvend, ik vroeg me eerst af of je die variabele wel zou gebruiken. Geef liever een naam zoals 'imageCount'
 </script>
 
 </html>
