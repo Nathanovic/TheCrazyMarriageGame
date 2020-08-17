@@ -31,7 +31,7 @@
         <h2>Kerktijd:</h2>
         <p class= "infoText" id="info-2">De kerkdienst begint om 12:00 uur.</p>
         <h2>Dresscode:</h2>
-        <p class= "infoText" id="info-3">Graag warm kleden!</p>
+        <p class= "infoText" id="info-3">Graag warm kleden! Voor daggasten: neem een kleedje mee!</p>
         <h2>Maaltijd:</h2>
         <p class= "infoText" id="info-4">We gaan gezond eten.</p>
         <h2>Receptie:</h2>
@@ -44,20 +44,29 @@
 <script> 
 	const ITEM_COUNT = 5;
     let targetItem = 1;
-	let targetDescriptions = ["We willen weten waar we heen moeten", "Hoe laat begint de dienst?", "Zoek je dresscode!", "Wat gaan we eten?", "Zoek waar de receptie is"];
+	let targetDescriptions = ["deze staat in de HTML", 
+		"Hoe laat begint de dienst?", 
+		"Zoek je dresscode!", 
+		"Wat gaan we eten?", 
+		"Zoek waar de receptie is"];
     
     function OnItemClicked(itemIndex){
 		if (targetItem > ITEM_COUNT) {return;}
 		if (itemIndex != targetItem) {return;}
 		
         document.getElementById("invitation").style.display = "block";
-        document.getElementById("info-" + itemIndex).style.display = "inline";
-        document.getElementById("targetDescription").innerHTML = targetDescriptions[targetItem];
+		setTimeout(function() {
+			document.getElementById("info-" + itemIndex).classList.add("visible");
+		}, 100);
         document.getElementById("popupCounter").innerHTML = targetItem + "/" + ITEM_COUNT;
+		document.getElementById("targetDescription").innerHTML = "";
 		targetItem ++;
     }
         
     function OnCloseInvitationClicked(){
+		if (targetItem <= ITEM_COUNT){
+			document.getElementById("targetDescription").innerHTML = targetDescriptions[targetItem-1];
+		}
         document.getElementById("invitation").style.display = "none";
     }   
 </script>

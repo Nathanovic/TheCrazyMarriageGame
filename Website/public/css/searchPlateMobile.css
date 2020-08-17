@@ -1,17 +1,9 @@
 #searchPlateContainer{
-	display: table;
-	margin: auto;
-	position: relative;
-	white-space: nowrap;
 	width: 90%;
 }
 
 #searchPlateContainer img {
 	width: 100%;
-}
-
-.searchPlateItem{
-	position: absolute;
 }
 
 #item1{

@@ -29,8 +29,37 @@ h1{
     transform: translate(-50%, -50%);
     background-color: aqua;
     display: none;
+	padding: 10px;
+}
+
+#invitation button{
+	bottom: 40px;
+	height: 30px;
+	display: block;
+	margin: auto;
 }
 
 .infoText{
-    display: none;
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in;
+       -moz-transition: opacity 1s ease-in;
+        -ms-transition: opacity 1s ease-in;
+         -o-transition: opacity 1s ease-in;
+            transition: opacity 1s ease-in;
+}
+
+.infoText.visible{
+	opacity: 1;
+}
+
+#searchPlateContainer{
+	display: table;
+	margin: auto;
+	position: relative;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.searchPlateItem{
+	position: absolute;
 }
