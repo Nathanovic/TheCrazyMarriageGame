@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/gameLayout.css"/>
+	<link rel="stylesheet" href="css/searchPlateMobile.css"/>
+    <title>Nathan & Arjanna & Mama</title>
+</head>
+
+<body>    
+	<h1>The Crazy Marriage Game:</h1>
+    <h2 id="popupCounter">0/5</h2>
+    
+    <div id="searchPlateContainer">
+		<img src="images/searchPlate/backgrounMobile.png" alt="background image"/>
+		<input class="searchPlateItem" id="item1" type="image" src="images/searchPlate/door.png" onclick="OpenPopup(1)"></input>   
+		<input class="searchPlateItem" id="item2" type="image" src="images/searchPlate/paper.png" onclick="OpenPopup(2)"></input>
+		<input class="searchPlateItem" id="item3" type="image" src="images/searchPlate/shoe.png" onclick="OpenPopup(3)"></input>
+		<input class="searchPlateItem" id="item4" type="image" src="images/searchPlate/vegetables.png" onclick="OpenPopup(4)"></input>
+		<input class="searchPlateItem" id="item5" type="image" src="images/searchPlate/key.png" onclick="OpenPopup(5)"></input>
+		<div style="clear: both"></div>
+	</div>
+        
+    <!-- als de gebruiker op een button klikt wordt dit zichtbaar: -->
+    <div id="invitation">
+        <h2>Kerklocatie:</h2>
+        <p class= "infoText" id="info-1">De kerk is op het Markplein 2 te Hattem</p>
+        <h2>Kerktijd:</h2>
+        <p class= "infoText" id="info-2">De kerkdienst begint om 12:00 uur.</p>
+        <h2>Dresscode:</h2>
+        <p class= "infoText" id="info-3">Graag warm kleden!</p>
+        <h2>Maaltijd:</h2>
+        <p class= "infoText" id="info-4">We gaan gezond eten.</p>
+        <h2>Receptie:</h2>
+        <p class= "infoText" id="info-5">De receptie vindt plaats op camping De Jagerstee, Officiersweg 86 te Epe.</p>
+		</br>
+		<button onclick="ClosePopup()" >Oké!</button>
+    </div>
+</body>
+    
+<script> 
+	const MAX_POPUP_COUNT = 5;
+    
+    let openPopup = null;
+    let openedPopups = [];
+    
+    function OpenPopup(id){
+        document.getElementById("invitation").style.display = "block";
+        openPopup = document.getElementById("info-" + id);
+        openPopup.style.display = "inline";
+        if (!openedPopups.includes(id)){
+            openedPopups.push(id);
+            document.getElementById("popupCounter").innerHTML = openedPopups.length + "/" + MAX_POPUP_COUNT;
+        }
+    }
+        
+    function ClosePopup(){
+        document.getElementById("invitation").style.display = "none";
+    }   
+</script>
+
+</html>

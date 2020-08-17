@@ -1,0 +1,34 @@
+#searchPlateContainer{
+	display: table;
+	margin: auto;
+	position: relative;
+}
+
+.searchPlateItem{
+	position: absolute;
+}
+
+#item1{
+	left: 696px;
+	top: 1232px;
+}
+
+#item2{
+	left: 30px;
+	top: 670px;
+}
+
+#item3{
+	left: 56px;
+	top: 1076px;
+}
+
+#item4{
+	left: 856px;
+	top: 289px;
+}
+
+#item5{
+	left: 180px;
+	top: 530px;
+}
