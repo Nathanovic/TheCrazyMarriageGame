@@ -8,16 +8,19 @@
 </head>
 
 <body>    
-	<h1>The Crazy Marriage Game:</h1>
-    <h2 id="popupCounter">0/5</h2>
-    
+	<h1>Verzamel je eigen uitnodiging!</h1>
+	<div id="gameInfo">
+		<h2 class="gameInfoItem" id="popupCounter">0/5</h2>
+		<h2 class="gameInfoItem" id="targetDescription">We willen weten waar we heen moeten</h2>
+    </div>
+	
     <div id="searchPlateContainer">
 		<img src="images/searchPlate/backgrounMobile.png" alt="background image"/>
-		<input class="searchPlateItem" id="item1" type="image" src="images/searchPlate/door.png" onclick="OpenPopup(1)"></input>   
-		<input class="searchPlateItem" id="item2" type="image" src="images/searchPlate/paper.png" onclick="OpenPopup(2)"></input>
-		<input class="searchPlateItem" id="item3" type="image" src="images/searchPlate/shoe.png" onclick="OpenPopup(3)"></input>
-		<input class="searchPlateItem" id="item4" type="image" src="images/searchPlate/vegetables.png" onclick="OpenPopup(4)"></input>
-		<input class="searchPlateItem" id="item5" type="image" src="images/searchPlate/key.png" onclick="OpenPopup(5)"></input>
+		<input class="searchPlateItem" id="item1" type="image" src="images/searchPlate/door.png" onclick="OnItemClicked(1)"></input>   
+		<input class="searchPlateItem" id="item2" type="image" src="images/searchPlate/paper.png" onclick="OnItemClicked(2)"></input>
+		<input class="searchPlateItem" id="item3" type="image" src="images/searchPlate/shoe.png" onclick="OnItemClicked(3)"></input>
+		<input class="searchPlateItem" id="item4" type="image" src="images/searchPlate/vegetables.png" onclick="OnItemClicked(4)"></input>
+		<input class="searchPlateItem" id="item5" type="image" src="images/searchPlate/key.png" onclick="OnItemClicked(5)"></input>
 		<div style="clear: both"></div>
 	</div>
         
@@ -34,27 +37,27 @@
         <h2>Receptie:</h2>
         <p class= "infoText" id="info-5">De receptie vindt plaats op camping De Jagerstee, Officiersweg 86 te Epe.</p>
 		</br>
-		<button onclick="ClosePopup()" >Oké!</button>
+		<button onclick="OnCloseInvitationClicked()" >Oké!</button>
     </div>
 </body>
     
 <script> 
-	const MAX_POPUP_COUNT = 5;
+	const ITEM_COUNT = 5;
+    let targetItem = 1;
+	let targetDescriptions = ["We willen weten waar we heen moeten", "Hoe laat begint de dienst?", "Zoek je dresscode!", "Wat gaan we eten?", "Zoek waar de receptie is"];
     
-    let openPopup = null;
-    let openedPopups = [];
-    
-    function OpenPopup(id){
+    function OnItemClicked(itemIndex){
+		if (targetItem > ITEM_COUNT) {return;}
+		if (itemIndex != targetItem) {return;}
+		
         document.getElementById("invitation").style.display = "block";
-        openPopup = document.getElementById("info-" + id);
-        openPopup.style.display = "inline";
-        if (!openedPopups.includes(id)){
-            openedPopups.push(id);
-            document.getElementById("popupCounter").innerHTML = openedPopups.length + "/" + MAX_POPUP_COUNT;
-        }
+        document.getElementById("info-" + itemIndex).style.display = "inline";
+        document.getElementById("targetDescription").innerHTML = targetDescriptions[targetItem];
+        document.getElementById("popupCounter").innerHTML = targetItem + "/" + ITEM_COUNT;
+		targetItem ++;
     }
         
-    function ClosePopup(){
+    function OnCloseInvitationClicked(){
         document.getElementById("invitation").style.display = "none";
     }   
 </script>

@@ -1,3 +1,21 @@
+h1{
+	text-align: center;
+}
+
+#gameInfo{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameInfoItem{
+	margin: 10px;
+}
+
 #invitation{
     position: fixed;
     top: 50%;

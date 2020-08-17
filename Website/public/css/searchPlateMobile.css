@@ -2,6 +2,13 @@
 	display: table;
 	margin: auto;
 	position: relative;
+	white-space: nowrap;
+	width: 90%;
+}
+
+#searchPlateContainer img {
+	width: 100%;
+	height: auto;
 }
 
 .searchPlateItem{
@@ -9,26 +16,36 @@
 }
 
 #item1{
-	left: 696px;
-	top: 1232px;
+	left: 64.4%;/*696px; 696/1080*100% (1080 = breedte van background image)*/
+	top: 82%;/*1232px; 1232/1500*100% (1500 = hoogte van background image)*/
+	width: 9.6%;/*104/1080*100% (104 = breedte van oorspronkelijk plaatje)*/
+	height: auto;
 }
 
 #item2{
-	left: 30px;
-	top: 670px;
+	left: 2%;/*20px;*/
+	top: 44.7%;/*670px;*/
+	width: 20%;
+	height: auto;
 }
 
 #item3{
-	left: 56px;
-	top: 1076px;
+	left: 0.5%;/*56px;*/
+	top: 71.7%;/*1076px;*/
+	width: 20%;
+	height: auto;
 }
 
 #item4{
-	left: 856px;
-	top: 289px;
+	left: 79%;/*856px;*/
+	top: 19,3%;/*289px;*/
+	width: 20%;
+	height: auto;
 }
 
 #item5{
-	left: 180px;
-	top: 530px;
+	left: 16.7%;/*180px;*/
+	top: 35.5%;/*530px;*/
+	width: 17%;
+	height: auto;
 }
