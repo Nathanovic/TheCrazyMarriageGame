@@ -4,7 +4,7 @@ h1{
 
 #gameInfo{
 	position: fixed;
-	top: 10px;
+	top: 0px;
 	z-index: 1;
 	
     display: -webkit-box;
@@ -26,6 +26,7 @@ h1{
     left: 50%;
     height: 500px;
     width: 600px;
+	max-width: 90% !important;
     transform: translate(-50%, -50%);
     background-color: aqua;
     display: none;
@@ -58,6 +59,7 @@ h1{
 	position: relative;
 	white-space: nowrap;
 	cursor: pointer;
+	margin-top: 40px;
 }
 
 .searchPlateItem{
