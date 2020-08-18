@@ -3,11 +3,11 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="css/gameLayout.css"/>
-	<link rel="stylesheet" href="css/searchPlateMobile.css"/>
+	<!--<link rel="stylesheet" href="css/searchPlateMobile.css"/>-->
     <title>Nathan & Arjanna & Mama</title>
 </head>
 
-<body>    
+<body onload="OnPageLoaded()">    
 	<h1>Verzamel je eigen uitnodiging!</h1>
 	<div id="gameInfo">
 		<h2 class="gameInfoItem" id="popupCounter">0/5</h2>
@@ -15,7 +15,7 @@
     </div>
 	
     <div id="searchPlateContainer">
-		<img src="images/searchPlate/backgroundMobile.png" alt="background image"/>
+		<img alt="background image"/>
 		<input class="searchPlateItem" id="item1" type="image" src="images/searchPlate/door.png" onclick="OnItemClicked(1)"></input>   
 		<input class="searchPlateItem" id="item2" type="image" src="images/searchPlate/paper.png" onclick="OnItemClicked(2)"></input>
 		<input class="searchPlateItem" id="item3" type="image" src="images/searchPlate/shoe.png" onclick="OnItemClicked(3)"></input>
@@ -50,6 +50,22 @@
 		"Wat gaan we eten?", 
 		"Zoek waar de receptie is"];
     
+	function OnPageLoaded(){
+		var link = document.createElement("link");
+		link.type = "text/css";
+		link.rel = "stylesheet";
+		var formatName = "Mobile";
+		if (screen.width > screen.height){
+			formatName = "Windows";
+		}
+		link.href = "css/searchPlate" + formatName + ".css";
+		var head = document.head;
+		head.appendChild(link);
+		
+        let backgroundImageElement = document.getElementById("searchPlateContainer").getElementsByTagName("img")[0];
+		backgroundImageElement.src = "images/searchPlate/background" + formatName + ".png"
+	}
+	
     function OnItemClicked(itemIndex){
 		if (targetItem > ITEM_COUNT) {return;}
 		if (itemIndex != targetItem) {return;}

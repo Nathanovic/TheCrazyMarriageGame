@@ -1,0 +1,37 @@
+#searchPlateContainer{
+	width: 82%;
+}
+
+#searchPlateContainer img {
+	width: 100%;
+}
+
+#item1{
+	left: 75%;/*1443*/
+	top: 78.2%;/*845*/
+	width: 5.4%;/*104/1920*/
+}
+
+#item2{
+	left: 37%;/*20px;*/
+	top: 13%;/*670px;*/
+	width: 14%;
+}
+
+#item3{
+	left: 25%;/*56px;*/
+	top: 71.7%;/*1076px;*/
+	width: 14%;
+}
+
+#item4{
+	left: 70%;/*856px;*/
+	top: 19,3%;/*289px;*/
+	width: 14%;
+}
+
+#item5{
+	left: 10%;/*210;*/
+	top: 49%;/*572;*/
+	width: 10%;
+}
