@@ -13,7 +13,7 @@
 	</div>
 	
 	<div id="gameInfo">
-		<h2 class="gameInfoItem" id="popupCounter">0/5</h2>
+		<h2 class="gameInfoItem" id="progressText">0/x</h2>
 		<h2 class="gameInfoItem" id="targetDescription">Beschrijving van wat de speler moet zoeken...</h2>
     </div>
 	
@@ -73,7 +73,7 @@
         let backgroundImageElement = document.getElementById("searchPlateContainer").getElementsByTagName("img")[0];
 		backgroundImageElement.src = "images/searchPlate/background" + formatName + ".png"
 		
-        document.getElementById("popupCounter").innerHTML = targetItem + "/" + ITEM_COUNT;
+        document.getElementById("progressText").innerHTML = targetItem + "/" + ITEM_COUNT;
 		document.getElementById("targetDescription").innerHTML = targetDescriptions[0];
 	}
 	
@@ -89,7 +89,7 @@
 		setTimeout(function() {
 			document.getElementById("info-" + itemIndex).classList.add("visible");
 		}, 100);
-        document.getElementById("popupCounter").innerHTML = targetItem + "/" + ITEM_COUNT;
+        document.getElementById("progressText").innerHTML = targetItem + "/" + ITEM_COUNT;
 		document.getElementById("targetDescription").innerHTML = "";
 		targetItem ++;
     }
