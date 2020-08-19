@@ -15,7 +15,7 @@
 	
 	<div id="gameInfo">
 		<h2 class="gameInfoItem" id="popupCounter">0/5</h2>
-		<h2 class="gameInfoItem" id="targetDescription">We willen weten waar we heen moeten</h2>
+		<h2 class="gameInfoItem" id="targetDescription">Beschrijving van wat de speler moet zoeken...</h2>
     </div>
 	
     <div id="searchPlateContainer">
@@ -25,6 +25,7 @@
 		<input class="searchPlateItem" id="item3" type="image" src="images/searchPlate/shoe.png" onclick="OnItemClicked(3)"></input>
 		<input class="searchPlateItem" id="item4" type="image" src="images/searchPlate/vegetables.png" onclick="OnItemClicked(4)"></input>
 		<input class="searchPlateItem" id="item5" type="image" src="images/searchPlate/key.png" onclick="OnItemClicked(5)"></input>
+		<input class="searchPlateItem" id="item6" type="image" src="images/searchPlate/cadeau.png" alt="cadeau" onclick="OnItemClicked(6)"></input>
 		<div style="clear: both"></div>
 	</div>
         
@@ -40,20 +41,23 @@
         <p class= "infoText" id="info-4">We gaan gezond eten.</p>
         <h2>Receptie:</h2>
         <p class= "infoText" id="info-5">De receptie vindt plaats op camping De Jagerstee, Officiersweg 86 te Epe.</p>
+        <h2>Cadeaus:</h2>
+        <p class= "infoText" id="info-6">We zouden het super vinden als jullie iets van ons <a href="https://www.lijstje.nl/NathanEnArjanna" target="blank">lijstje</a> zouden willen geven!</p>
 		</br>
 		<button onclick="OnCloseInvitationClicked()" >Oké!</button>
     </div>
 </body>
     
 <script> 
-	const ITEM_COUNT = 5;
+	const ITEM_COUNT = 6;
 	let explanationGiven = false;
     let targetItem = 1;
-	let targetDescriptions = ["deze staat in de HTML", 
+	let targetDescriptions = ["We willen weten waar we heen moeten", 
 		"Hoe laat begint de dienst?", 
 		"Zoek je dresscode!", 
 		"Wat gaan we eten?", 
-		"Zoek waar de receptie is"];
+		"Zoek waar de receptie is",
+		"Wat wilden we ook alweer vragen?"];
     
 	function OnPageLoaded(){
 		var link = document.createElement("link");
@@ -69,6 +73,9 @@
 		
         let backgroundImageElement = document.getElementById("searchPlateContainer").getElementsByTagName("img")[0];
 		backgroundImageElement.src = "images/searchPlate/background" + formatName + ".png"
+		
+        document.getElementById("popupCounter").innerHTML = targetItem + "/" + ITEM_COUNT;
+		document.getElementById("targetDescription").innerHTML = targetDescriptions[0];
 	}
 	
 	function OnStartButton(){
