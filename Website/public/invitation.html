@@ -8,6 +8,11 @@
 </head>
 
 <body onload="OnPageLoaded()">    
+	<div id="gameIntroScreen">
+		<img src="images/gameIntroScreen.png"/>
+		<button onclick="OnStartButton()">Start de game</button>
+	</div>
+	
 	<div id="gameInfo">
 		<h2 class="gameInfoItem" id="popupCounter">0/5</h2>
 		<h2 class="gameInfoItem" id="targetDescription">We willen weten waar we heen moeten</h2>
@@ -42,6 +47,7 @@
     
 <script> 
 	const ITEM_COUNT = 5;
+	let explanationGiven = false;
     let targetItem = 1;
 	let targetDescriptions = ["deze staat in de HTML", 
 		"Hoe laat begint de dienst?", 
@@ -63,6 +69,10 @@
 		
         let backgroundImageElement = document.getElementById("searchPlateContainer").getElementsByTagName("img")[0];
 		backgroundImageElement.src = "images/searchPlate/background" + formatName + ".png"
+	}
+	
+	function OnStartButton(){
+		document.getElementById("gameIntroScreen").style.display = "none";
 	}
 	
     function OnItemClicked(itemIndex){
