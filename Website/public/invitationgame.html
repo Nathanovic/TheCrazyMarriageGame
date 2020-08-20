@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/baseLayout.css"/>
 	<link rel="stylesheet" href="css/gameLayout.css"/>
     <title>Nathan & Arjanna</title>
 	<script type="text/javascript" src="js/Gameplay.js"></script>
@@ -9,12 +10,16 @@
 </head>
 
 <body onload="OnPageLoaded()"> 
-<!--   (disabled for testing purposes)
+<!--   (disabled for testing purposes) -->
 	<div id="gameIntroScreen">
 		<img src="images/gameIntroScreen.png"/>
-		<button onclick="OnStartButton()">Start de game</button>
+		<div id="introTextContainer">
+		<p>Arjanna en Nathan zijn er helemaal klaar voor... Ze gaan trouwen! Maar wacht... Hoe laat begon het nou ook alweer? En waar had Arjanna haar sleutels laten liggen? Nathan en Arjanna krijgen het niet
+		op een rijtje. Help ze mee en kom erachter wat er allemaal gaat gebeuren op 31 oktober!</p>
+		</div>
+		<button onclick="OnStartButton()"><p>Start de game!</p></button>
 	</div>
-	-->
+	
 	<div id="gameInfo">
 		<h2 class="gameInfoItem" id="progressText">0/x</h2>
 		<h2 class="gameInfoItem" id="targetDescription">Beschrijving van wat de speler moet zoeken...</h2>
@@ -43,7 +48,7 @@
         <h3 class="specialGuestItem">Maaltijd:</h3>
         <p class="infoText specialGuestItem" id="info-5">Het diner begint om 18:00 uur en daarna is er feest tot 23:00 uur op de camping. </br>
 		Het kan koud worden, dus zorg dat je warm gekleed bent en dat je een kleedje meeneemt!</p>
-		<button onclick="OnCloseInvitationClicked()" >Oké!</button>
+		<button onclick="OnCloseInvitationClicked()"><p>Oké!</p></button>
     </div>
 </body>
     

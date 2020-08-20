@@ -6,6 +6,19 @@ body{
 	margin: 0;
 }
 
+button{
+	background-color: #1a2312;
+	color: #f3e4bf;
+    outline: none;	
+	width: 250px;
+	height: 50px;
+}
+
+button p{
+	margin-bottom: 0.6rem;
+	font-size: 1rem;
+}
+
 #gameIntroScreen{
 	position: fixed;
 	top: 0px;
@@ -17,6 +30,23 @@ body{
 	background-color: #f3e4bf;
 }
 
+#introTextContainer{
+	position: fixed;
+	width: 100%;
+	top: 11rem;	
+	text-align: center;
+	font-size: 1.6rem;
+}
+
+#introTextContainer p{
+	width: 500px;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+#introText{
+}
+
 #gameIntroScreen img{
 	height: 100%;
 	position: fixed;
@@ -26,14 +56,9 @@ body{
 
 #gameIntroScreen button{
 	position: fixed;
-	width: 250px;
-	height: 50px;
 	bottom: 4.8%;
     left: 50%;
     transform: translate(-50%, 0);
-	background-color: #1a2312;
-	color: #f3e4bf;
-    outline: none;
 }
 
 #gameIntroScreen button:hover{
