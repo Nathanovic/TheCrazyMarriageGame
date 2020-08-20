@@ -2,6 +2,10 @@ h1{
 	text-align: center;
 }
 
+body{
+	margin: 0;
+}
+
 #gameIntroScreen{
 	position: fixed;
 	top: 0px;
@@ -47,8 +51,6 @@ h1{
 }
 
 #gameInfo{
-	position: fixed;
-	top: 0px;
 	z-index: 1;
 	
     display: -webkit-box;
@@ -58,6 +60,7 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+	font-size: 3vh;
 }
 
 .gameInfoItem{
@@ -100,14 +103,14 @@ h1{
 
 #searchPlateContainer{
 	display: table;
-	margin: auto;
+	margin: 0 auto;
 	position: relative;
 	white-space: nowrap;
 	cursor: pointer;
-	margin-top: 40px;
 }
 
 .searchPlateItem{
 	position: absolute;
     outline: none;
+	width: 3%;
 }
