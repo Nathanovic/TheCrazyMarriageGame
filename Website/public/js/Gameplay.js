@@ -1,25 +1,43 @@
 let targetItem = 1;
+let isSpecialGuest = false;
     
 function TargetCount(){
-	return targetDescriptions.length;
+	let targetCount = targetDescriptions.length;
+	if (isSpecialGuest){
+		targetCount += specialGuestTargetDescriptions.length;
+	}
+	return targetCount;
 }
 
 function Load(){
 	// Add css
-	var link = document.createElement("link");
+	let link = document.createElement("link");
 	link.type = "text/css";
 	link.rel = "stylesheet";
-	var formatName = "Mobile";
+	let formatName = "Mobile";
 	if (screen.width > screen.height){
 		formatName = "Windows";
 	}
 	link.href = "css/searchPlate" + formatName + ".css";
-	var head = document.head;
+	let head = document.head;
 	head.appendChild(link);
 	
 	// Set the background image for the search plate
 	let backgroundImageElement = document.getElementById("searchPlateContainer").getElementsByTagName("img")[0];
 	backgroundImageElement.src = "images/searchPlate/background" + formatName + ".png"
+	
+	// See if this player is the special guest
+	let splittedURL = window.location.href.split('/');
+	let location = splittedURL[splittedURL.length -1];
+	isSpecialGuest = location.includes("?specialGuest=true");
+	
+	// If the player is not a special guest, remove special-guest-only stuff
+	if(!isSpecialGuest){
+		let specialGuestElements = document.getElementsByClassName("specialGuestItem");
+		for(let i = 0; i < specialGuestElements.length; i ++){
+			specialGuestElements[i].style.display = "none";
+		}
+	}
 	
 	// Set the game info text
 	document.getElementById("progressText").innerHTML = "0/" + TargetCount();

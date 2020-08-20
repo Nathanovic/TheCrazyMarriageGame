@@ -1,0 +1,33 @@
+/* Other */
+#saveTheDateImg{
+	background-image: url("../images/saveTheDate.jpg");
+	max-width: 100% !important;	
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* Screen size dependent sizing & positioning */
+
+@media only screen and (min-width: 1101px) {
+	#saveTheDateImg{	
+		width:360px;
+		height:800px;
+		margin:4rem auto;
+	}
+}
+@media only screen and (max-width: 1100px) { 
+	#saveTheDateImg{	
+		width:360px;
+		height:800px;
+		margin: 2rem auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	#saveTheDateImg{	
+		width: 315px;
+		height: 700px;
+		margin: 1rem auto;
+	}
+}

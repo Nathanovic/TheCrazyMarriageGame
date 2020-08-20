@@ -5,10 +5,11 @@
 	<link rel="stylesheet" href="css/gameLayout.css"/>
     <title>Nathan & Arjanna</title>
 	<script type="text/javascript" src="js/Gameplay.js"></script>
+	<link rel="icon" href="favicon.png">
 </head>
 
 <body onload="OnPageLoaded()"> 
-<!--   
+<!--   (disabled for testing purposes)
 	<div id="gameIntroScreen">
 		<img src="images/gameIntroScreen.png"/>
 		<button onclick="OnStartButton()">Start de game</button>
@@ -36,14 +37,12 @@
         <h3>Tijdstip:</h3>
         <p class="infoText" id="info-2">De kerkdienst begint om 12:00 uur.</p>
         <h3>Receptie:</h3>
-        <p class="infoText" id="info-3">De taart wordt om half 3 aangesneden op de jagerstee, adres. De receptie duurt tot 16.00 uur. Kom je ook? Laat het in de <a href="RSVP.html" target="blank">rsvp</a> weten!</p>
+        <p class="infoText" id="info-3">De taart wordt om half 3 aangesneden op de jagerstee, adres. De receptie duurt tot 16.00 uur. Kom je ook? Laat het in de <a href="#" onclick='window.open("RSVP.html")' target="blank">rsvp</a> weten!</p>
         <h3>Cadeaus:</h3>
-        <p class="infoText" id="info-4">We zouden het super vinden als jullie iets van ons <a href="https://www.lijstje.nl/NathanEnArjanna" target="blank">lijstje</a> zouden willen geven!</p>
-        <h3>Maaltijd:</h3>
-        <p class="infoText" id="info-5">Het diner begint om 18:00 uur en daarna is er feest tot 23:00 uur op de camping.</p>
-        <h3>Dresscode:</h3>
-        <p id="info-3">Graag warm kleden! Voor daggasten: neem een kleedje mee!</p>
-		</br>
+        <p class="infoText" id="info-4">We zouden het super vinden als jullie iets van ons <a href="#" onclick='window.open("https://www.lijstje.nl/NathanEnArjanna")' target="blank">lijstje</a> zouden willen geven!</p>
+        <h3 class="specialGuestItem">Maaltijd:</h3>
+        <p class="infoText specialGuestItem" id="info-5">Het diner begint om 18:00 uur en daarna is er feest tot 23:00 uur op de camping. </br>
+		Het kan koud worden, dus zorg dat je warm gekleed bent en dat je een kleedje meeneemt!</p>
 		<button onclick="OnCloseInvitationClicked()" >Oké!</button>
     </div>
 </body>
@@ -52,8 +51,8 @@
 	let targetDescriptions = ["Zoek Arjanna's sleutel!", 
 		"Zoek de agenda van Nathan", 
 		"Waar is het mes gebleven?", 
-		"Zoek het cadeau",
-		"Waar is het bestek gebleven?"];
+		"Zoek het cadeau"];
+	let specialGuestTargetDescriptions = ["Waar is het bestek gebleven?"];
 	
 	function OnPageLoaded(){
 		Load();
