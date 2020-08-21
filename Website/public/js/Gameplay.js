@@ -4,7 +4,13 @@ let progressScreenElement;
 let progressScreenImage;
 let progressScreenText;
 let progressScreenButtonText;
+let showSpecialGuestFinishedScreen = false;
+const COMPLETION_IMAGE_SRC = "images/popUpScreens/invitationComplete.png";
     
+function GetTargetDescription(){
+	if (isSpecialGuest && targetItem){}// special guest description
+}
+	
 function TargetCount(){
 	let targetCount = targetDescriptions.length;
 	if (isSpecialGuest){
@@ -14,6 +20,8 @@ function TargetCount(){
 }
 
 function Load(){
+	showSpecialGuestFinishedScreen = false;
+	
 	// Add css
 	let link = document.createElement("link");
 	link.type = "text/css";
@@ -59,11 +67,16 @@ function OnStartButton(){
 }
 
 function OnContinueButton(){
-	progressScreenElement.style.display = "none";	
 	if (targetItem <= TargetCount()){
+		progressScreenElement.style.display = "none";
 		document.getElementById("targetDescription").innerHTML = targetDescriptions[targetItem-1];
-	}else{
-		document.getElementById("progressText").innerHTML = "Je hebt het spel uitgespeeld!";		
+	}
+	else{
+		if (!progressScreenImage.src.includes(COMPLETION_IMAGE_SRC)){			
+			progressScreenImage.src = COMPLETION_IMAGE_SRC;
+			return;
+		}		
+		window.open("RSVP.html");
 	}
 }
 
@@ -77,10 +90,15 @@ function OnItemClicked(itemIndex){
 	targetItem ++;
 	
 	progressScreenElement.style.display = "block";
-	if (targetItem <= TargetCount()){
+	if (targetItem <= TargetCount() || isSpecialGuest){
 		progressScreenImage.src = "images/popUpScreens/gameProgressScreenImage" + targetItem + ".png";
 	}
 	else{
-		progressScreenImage.src = "images/popUpScreens/invitationCompleteImage.png";		
+		progressScreenImage.src = COMPLETION_IMAGE_SRC;
+	}
+	
+	// Test purposes only, this should never be visible to the player:
+	if (targetItem > TargetCount()){
+		document.getElementById("progressText").innerHTML = "Je hebt het spel uitgespeeld!";
 	}
 } 
