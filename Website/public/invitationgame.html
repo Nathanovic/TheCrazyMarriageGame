@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="css/baseLayout.css"/>
+	<link rel="stylesheet" href="css/gameLayout.css"/>
+    <title>Nathan & Arjanna</title>
+	<script type="text/javascript" src="js/Gameplay.js"></script>
+	<link rel="icon" href="favicon.png">
+</head>
+
+<body onload="OnPageLoaded()"> 
+<!--   (disabled for testing purposes) -->
+	<div id="gameIntroScreen">
+		<img src="images/gameIntroScreen.png"/>
+		<div id="introTextContainer">
+		<p>Arjanna en Nathan zijn er helemaal klaar voor... Ze gaan trouwen! Maar wacht... Hoe laat begon het nou ook alweer? En waar had Arjanna haar sleutels laten liggen? Nathan en Arjanna krijgen het niet
+		op een rijtje. Help ze mee en kom erachter wat er allemaal gaat gebeuren op 31 oktober!</p>
+		</div>
+		<button onclick="OnStartButton()"><p>Start de game!</p></button>
+	</div>
+	
+	<div id="gameInfo">
+		<h2 class="gameInfoItem" id="progressText">0/x</h2>
+		<h2 class="gameInfoItem" id="targetDescription">Beschrijving van wat de speler moet zoeken...</h2>
+    </div>
+	
+    <div id="searchPlateContainer">
+		<img alt="background image"/>
+		<input class="searchPlateItem" id="item1" type="image" src="images/searchPlate/key.png" onclick="OnItemClicked(1)"></input>   
+		<input class="searchPlateItem" id="item2" type="image" src="images/searchPlate/agenda.png" onclick="OnItemClicked(2)"></input>
+		<input class="searchPlateItem" id="item3" type="image" src="images/searchPlate/knife.png" alt="knife" onclick="OnItemClicked(3)"></input>
+		<input class="searchPlateItem" id="item4" type="image" src="images/searchPlate/cadeau.png" alt="cadeau" onclick="OnItemClicked(4)"></input>
+		<input class="searchPlateItem specialGuestItem" id="item5" type="image" src="images/searchPlate/spoon.png" alt="spoon" onclick="OnItemClicked(5)"></input>
+		<div style="clear: both"></div>	
+	</div>
+        
+    <!-- als de gebruiker op een button klikt wordt dit zichtbaar: -->
+    <div id="invitation">
+        <h3>Kerklocatie:</h3>
+        <p class="infoText" id="info-1">De kerk is op het Markplein 2 te Hattem</p>
+        <h3>Tijdstip:</h3>
+        <p class="infoText" id="info-2">De kerkdienst begint om 12:00 uur.</p>
+        <h3>Receptie:</h3>
+        <p class="infoText" id="info-3">De taart wordt om half 3 aangesneden op de jagerstee, adres. De receptie duurt tot 16.00 uur. Kom je ook? Laat het in de <a href="#" onclick='window.open("RSVP.html")' target="blank">rsvp</a> weten!</p>
+        <h3>Cadeaus:</h3>
+        <p class="infoText" id="info-4">We zouden het super vinden als jullie iets van ons <a href="#" onclick='window.open("https://www.lijstje.nl/NathanEnArjanna")' target="blank">lijstje</a> zouden willen geven!</p>
+        <h3 class="specialGuestItem">Maaltijd:</h3>
+        <p class="infoText specialGuestItem" id="info-5">Het diner begint om 18:00 uur en daarna is er feest tot 23:00 uur op de camping. </br>
+		Het kan koud worden, dus zorg dat je warm gekleed bent en dat je een kleedje meeneemt!</p>
+		<button onclick="OnCloseInvitationClicked()"><p>Oké!</p></button>
+    </div>
+</body>
+    
+<script> 
+	let targetDescriptions = ["Zoek Arjanna's sleutel!", 
+		"Zoek de agenda van Nathan", 
+		"Waar is het mes gebleven?", 
+		"Zoek het cadeau"];
+	let specialGuestTargetDescriptions = ["Waar is het bestek gebleven?"];
+	
+	function OnPageLoaded(){
+		Load();
+	}
+</script>
+
+</html>

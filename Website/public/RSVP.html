@@ -3,43 +3,32 @@
 <head>
 	<title>Nathan & Arjanna</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="css/CSS.rsvp.css"/>
+	<link rel="stylesheet" href="css/baseLayout.css"/>
+	<link rel="stylesheet" href="css/rsvp.css"/>
 	<link rel="icon" href="favicon.png">
 </head>
 
 <body>
-	<div class="sideBar" id="leavesLeft"></div>
-	<div class="d-flex justify-content-center">
-		<div class="titlebar">
-			<h1>Nathan & Arjanna</h1>
-			</div>
-			<h3> 
-			<ul> 
-				<li> <a href="index.html" class="button1" >  Home </a>
-				<li> <a href="OnsVerhaal.html"class="button1" > Ons verhaal</a> 
-				<li> <a href="GameAvondgasten.html" class="button1" > The Game </a>
-				<li> <a href="RSVP.html" class="button1" > RSVP </a>
-				<li> <a href="Cadeaulijstje.html" class="button1" > Verlanglijstje </a>
-			</ul> </h3>
-		</div>
-			<h2>
-			<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd_UcSluqad8-zz169jzw5y69GNYJivWAjY2z7kZKsMXtMKKQ/viewform?embedded=true" width="80%" height="800" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
-			</h2>
-	</div>
-	<div class="sideBar" id="leavesRight"></div>
 	<div id="wrapper">
-		
-		
-		<div class="d-flex justify-content-center">
-			<h2 class="align-middle"></h2>
+		<div class="sideBar" id="leavesLeft"></div>
+		<div class="sideBar" id="leavesRight"></div>
+		<div id="titleBar" class="woodInfoBar">
+			<div id="title">
+				<h1>Nathan & Arjanna</h1> 
+			</div>
+			<ul id="menu"> 
+				<li> <a href="index.html"><h3> Home </h3></a>
+				<li> <a href="OnsVerhaal.html"><h3> Ons verhaal</h3></a>
+				<li> <a href="RSVP.html"><h3> RSVP </h3></a>
+				<li> <a href="#" onclick='window.open("https://www.lijstje.nl/NathanEnArjanna");return false;'><h3> Verlanglijstje </h3></a>
+			</ul>			
 		</div>
+		<iframe id="googleForm" src="https://docs.google.com/forms/d/e/1FAIpQLSd_UcSluqad8-zz169jzw5y69GNYJivWAjY2z7kZKsMXtMKKQ/viewform?embedded=true" width="100%" height="1670px" frameborder="0" >Laden…</iframe>
 		
 		<div class="overlap"></div>
 	</div>
-	<div class="bottomBar" class="woodInfoBar">
-		<h2>Copyright of zoiets</h2>
+	<div id="bottomBar" class="woodInfoBar">
+		<h2>Meer info volgt nog!</h2>
 	</div>	
 </body>
-
-<script src="js/bootstrap.min.js"/>
 </html>
