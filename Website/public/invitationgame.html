@@ -10,14 +10,21 @@
 </head>
 
 <body onload="OnPageLoaded()"> 
-<!--   (disabled for testing purposes) -->
-	<div id="gameIntroScreen">
+	<div class="informationScreen" id="gameIntroScreen">
 		<img src="images/gameIntroScreen.png"/>
-		<div id="introTextContainer">
+		<div class="overlayScreenTextContainer">
 		<p>Arjanna en Nathan zijn er helemaal klaar voor... Ze gaan trouwen! Maar wacht... Hoe laat begon het nou ook alweer? En waar had Arjanna haar sleutels laten liggen? Nathan en Arjanna krijgen het niet
 		op een rijtje. Help ze mee en kom erachter wat er allemaal gaat gebeuren op 31 oktober!</p>
 		</div>
 		<button onclick="OnStartButton()"><p>Start de game!</p></button>
+	</div>
+	
+	<div class="informationScreen" id="gameProgressScreen">
+		<img src="images/gameIntroScreen.png"/>
+		<div class="overlayScreenTextContainer">
+		<p>x is y kwijt</p>
+		</div>
+		<button onclick="OnContinueButton()"><p>Ik ga op zoek!</p></button>
 	</div>
 	
 	<div id="gameInfo">
@@ -58,6 +65,8 @@
 		"Waar is het mes gebleven?", 
 		"Zoek het cadeau"];
 	let specialGuestTargetDescriptions = ["Waar is het bestek gebleven?"];
+	let progressTexts = ["Arjanna staat op het punt om naar de kerk te vertrekken. Maar waar heeft ze haar autosleutel nu laten slingeren?",
+		"Goed gedaan! Helaas is Nathan ook zijn agenda kwijt, lol. Misschien heeft hij de agenda in het bos laten liggen?", "2", "3", "4", "5", "6"];
 	
 	function OnPageLoaded(){
 		Load();
