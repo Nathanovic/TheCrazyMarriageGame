@@ -27,17 +27,26 @@ body{
 }
 
 .informationScreen button{
+	position: fixed;
+	bottom: 4.8%;
+    left: 50%;
+    transform: translate(-50%, 0);
+	
 	background-color: #1a2312;
 	color: #f3e4bf;
     outline: none;	
 	width: 250px;
 	height: 50px;
-	padding: 0 0 0.6rem;
 	
-	position: fixed;
-	bottom: 4.8%;
-    left: 50%;
-    transform: translate(-50%, 0);
+	font-size: 2.6vh;
+	
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+}
+
+.informationScreen button p{
+
 }
 
 .informationScreen button:hover, .informationScreen button:active{
@@ -45,6 +54,7 @@ body{
 	height: 60px;
 	bottom: 4.8%;
     transform: translate(-50%, 5px);
+	font-size: 2.75vh;
 }
 
 .overlayScreenTextContainer{
@@ -79,40 +89,6 @@ body{
 
 .gameInfoItem{
 	margin: 10px;
-}
-
-#invitation{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    height: 700px;
-    width: 600px;
-	max-width: 90% !important;
-	max-height: 95% !important;
-    transform: translate(-50%, -50%);
-    background-color: aqua;
-    display: none;
-	padding: 10px;
-}
-
-#invitation button{
-	bottom: 40px;
-	height: 30px;
-	display: block;
-	margin: auto;
-}
-
-.infoText{
-    opacity: 0;
-    -webkit-transition: opacity 1s ease-in;
-       -moz-transition: opacity 1s ease-in;
-        -ms-transition: opacity 1s ease-in;
-         -o-transition: opacity 1s ease-in;
-            transition: opacity 1s ease-in;
-}
-
-.infoText.visible{
-	opacity: 1;
 }
 
 #searchPlateContainer{

@@ -54,11 +54,17 @@ function OnStartButton(){
 	progressScreenImage = progressScreenElement.getElementsByTagName("img")[0];
 	progressScreenText = progressScreenElement.getElementsByTagName("p")[0];
 	progressScreenButtonText = progressScreenElement.getElementsByTagName("p")[1];
-	ShowProgressScreen();
+	progressScreenElement.style.display = "block";
+	progressScreenImage.src = "images/popUpScreens/gameProgressScreenImage" + targetItem + ".png";
 }
 
 function OnContinueButton(){
 	progressScreenElement.style.display = "none";	
+	if (targetItem <= TargetCount()){
+		document.getElementById("targetDescription").innerHTML = targetDescriptions[targetItem-1];
+	}else{
+		document.getElementById("progressText").innerHTML = "Je hebt het spel uitgespeeld!";		
+	}
 }
 
 function OnItemClicked(itemIndex){
@@ -66,28 +72,15 @@ function OnItemClicked(itemIndex){
 	if (progressScreenElement.style.display != "none") {return;}
 	if (itemIndex != targetItem) {return;}
 	
-	document.getElementById("invitation").style.display = "block";
-	setTimeout(function() {
-		document.getElementById("info-" + itemIndex).classList.add("visible");
-	}, 100);
 	document.getElementById("progressText").innerHTML = targetItem + "/" + TargetCount();
 	document.getElementById("targetDescription").innerHTML = "";
 	targetItem ++;
 	
-	ShowProgressScreen();
-}
-	
-function OnCloseInvitationClicked(){
-	if (targetItem <= TargetCount()){
-		document.getElementById("targetDescription").innerHTML = targetDescriptions[targetItem-1];
-	}else{
-		document.getElementById("progressText").innerHTML = "Je hebt het spel uitgespeeld!";		
-	}
-	document.getElementById("invitation").style.display = "none";
-}   
-
-function ShowProgressScreen(){
 	progressScreenElement.style.display = "block";
-	progressScreenImage.src = "images/popUpScreens/gameProgressScreenImage" + targetItem + ".png";
-	progressScreenText.innerHTML = progressTexts[targetItem - 1];	
-}
+	if (targetItem <= TargetCount()){
+		progressScreenImage.src = "images/popUpScreens/gameProgressScreenImage" + targetItem + ".png";
+	}
+	else{
+		progressScreenImage.src = "images/popUpScreens/invitationCompleteImage.png";		
+	}
+} 

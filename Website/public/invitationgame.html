@@ -21,9 +21,6 @@
 	
 	<div class="informationScreen" id="gameProgressScreen">
 		<img src="images/gameIntroScreen.png"/>
-		<div class="overlayScreenTextContainer">
-		<p>x is y kwijt</p>
-		</div>
 		<button onclick="OnContinueButton()"><p>Ik ga op zoek!</p></button>
 	</div>
 	
@@ -41,22 +38,6 @@
 		<input class="searchPlateItem specialGuestItem" id="item5" type="image" src="images/searchPlate/spoon.png" alt="spoon" onclick="OnItemClicked(5)"></input>
 		<div style="clear: both"></div>	
 	</div>
-        
-    <!-- als de gebruiker op een button klikt wordt dit zichtbaar: -->
-    <div id="invitation">
-        <h3>Kerklocatie:</h3>
-        <p class="infoText" id="info-1">De kerk is op het Markplein 2 te Hattem</p>
-        <h3>Tijdstip:</h3>
-        <p class="infoText" id="info-2">De kerkdienst begint om 12:00 uur.</p>
-        <h3>Receptie:</h3>
-        <p class="infoText" id="info-3">De taart wordt om half 3 aangesneden op de jagerstee, adres. De receptie duurt tot 16.00 uur. Kom je ook? Laat het in de <a href="#" onclick='window.open("RSVP.html")' target="blank">rsvp</a> weten!</p>
-        <h3>Cadeaus:</h3>
-        <p class="infoText" id="info-4">We zouden het super vinden als jullie iets van ons <a href="#" onclick='window.open("https://www.lijstje.nl/NathanEnArjanna")' target="blank">lijstje</a> zouden willen geven!</p>
-        <h3 class="specialGuestItem">Maaltijd:</h3>
-        <p class="infoText specialGuestItem" id="info-5">Het diner begint om 18:00 uur en daarna is er feest tot 23:00 uur op de camping. </br>
-		Het kan koud worden, dus zorg dat je warm gekleed bent en dat je een kleedje meeneemt!</p>
-		<button onclick="OnCloseInvitationClicked()"><p>Oké!</p></button>
-    </div>
 </body>
     
 <script> 
@@ -65,8 +46,6 @@
 		"Waar is het mes gebleven?", 
 		"Zoek het cadeau"];
 	let specialGuestTargetDescriptions = ["Waar is het bestek gebleven?"];
-	let progressTexts = ["Arjanna staat op het punt om naar de kerk te vertrekken. Maar waar heeft ze haar autosleutel nu laten slingeren?",
-		"Goed gedaan! Helaas is Nathan ook zijn agenda kwijt, lol. Misschien heeft hij de agenda in het bos laten liggen?", "2", "3", "4", "5", "6"];
 	
 	function OnPageLoaded(){
 		Load();
