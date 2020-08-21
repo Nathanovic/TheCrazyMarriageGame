@@ -1,5 +1,9 @@
 let targetItem = 1;
 let isSpecialGuest = false;
+let progressScreenElement;
+let progressScreenImage;
+let progressScreenText;
+let progressScreenButtonText;
     
 function TargetCount(){
 	let targetCount = targetDescriptions.length;
@@ -46,10 +50,20 @@ function Load(){
 
 function OnStartButton(){
 	document.getElementById("gameIntroScreen").style.display = "none";
+	progressScreenElement = document.getElementById("gameProgressScreen");
+	progressScreenImage = progressScreenElement.getElementsByTagName("img")[0];
+	progressScreenText = progressScreenElement.getElementsByTagName("p")[0];
+	progressScreenButtonText = progressScreenElement.getElementsByTagName("p")[1];
+	ShowProgressScreen();
+}
+
+function OnContinueButton(){
+	progressScreenElement.style.display = "none";	
 }
 
 function OnItemClicked(itemIndex){
 	if (targetItem > TargetCount()) {return;}
+	if (progressScreenElement.style.display != "none") {return;}
 	if (itemIndex != targetItem) {return;}
 	
 	document.getElementById("invitation").style.display = "block";
@@ -59,6 +73,8 @@ function OnItemClicked(itemIndex){
 	document.getElementById("progressText").innerHTML = targetItem + "/" + TargetCount();
 	document.getElementById("targetDescription").innerHTML = "";
 	targetItem ++;
+	
+	ShowProgressScreen();
 }
 	
 function OnCloseInvitationClicked(){
@@ -69,3 +85,9 @@ function OnCloseInvitationClicked(){
 	}
 	document.getElementById("invitation").style.display = "none";
 }   
+
+function ShowProgressScreen(){
+	progressScreenElement.style.display = "block";
+	progressScreenImage.src = "images/popUpScreens/gameProgressScreenImage" + targetItem + ".png";
+	progressScreenText.innerHTML = progressTexts[targetItem - 1];	
+}
