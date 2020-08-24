@@ -45,10 +45,6 @@ body{
 	align-items: center; 
 }
 
-.informationScreen button p{
-
-}
-
 .informationScreen button:hover, .informationScreen button:active{
 	width: 260px;
 	height: 60px;
