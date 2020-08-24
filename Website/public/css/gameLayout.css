@@ -53,19 +53,6 @@ body{
 	font-size: 2.75vh;
 }
 
-.overlayScreenTextContainer{
-	position: fixed;
-	width: 100%;
-	top: 18%;	
-	text-align: center;
-}
-
-.overlayScreenTextContainer p{
-	width: 60vh;
-	max-width: 90% !important;
-	margin: 0 auto;
-}
-
 #gameProgressScreen{
 	display: none;
 }
