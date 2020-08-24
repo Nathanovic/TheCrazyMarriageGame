@@ -25,7 +25,7 @@ html, body {
 }
 h1, h2, h3, h4, h5 {
 	margin: .5rem 0;
-    font-weight: bold;
+    font-weight: normal; 
     line-height: 1.2;
 }
 h1{
@@ -36,7 +36,7 @@ h2, h3, h4, h5 {
 	font-family: typewriter;	
 }
 p{
-	font-family: cambria;
+	font-family: cambria !important;
 	font-size: 1.5rem;
     line-height: 1.15;
 }
@@ -134,6 +134,10 @@ p{
 		font-size: 35px;
 	}
 	
+	h3 {
+		font-size: 20px;
+	}
+	
 	.sideBar{
 		width: 150px;
 	}
@@ -152,6 +156,11 @@ p{
 	h2 {
 		font-size: 28px;
 	}
+	
+	h3 {
+		font-size: 20px; 
+	}
+	
 	#menu li a {
 		font-size: 1.5rem;
 	}
@@ -176,6 +185,11 @@ p{
 	h2 {
 		font-size: 20px;
 	}
+	
+	h3 {
+		font-size: 15px;
+	} 
+	
 	#menu li a {
 		font-size: 1.2rem;
 	}
