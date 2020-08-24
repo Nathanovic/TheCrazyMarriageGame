@@ -40,6 +40,14 @@ p{
 	font-size: 1.5rem;
     line-height: 1.15;
 }
+#menu li a {
+	font-family: typewriter;	
+	color: white;
+	text-decoration: none;
+	font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.15;	
+}
 
 /* Menu bar settings */
 #title{
@@ -47,9 +55,10 @@ p{
 	flex-basis: 100%;
 }
 #menu {
+	margin: 0 auto;
+	max-width: 90%;
+	padding: 1rem 0 1rem;
 	list-style-type: none;
-	margin: 0;
-	padding: 0 0 1rem;
 	font-family: typewriter;
 }
 #menu li {
@@ -58,13 +67,7 @@ p{
 	display: flex; 
 	justify-content: center; 
 	align-items: center;
-	margin: 0 16px;
-}
-#menu li a {
-	color: white;
-	font-size: 3vh;
-	text-decoration: none;
-    border-radius:5px;
+	margin: 4px 8px;
 }
 
 /*  Wood info bars */
@@ -149,6 +152,9 @@ p{
 	h2 {
 		font-size: 28px;
 	}
+	#menu li a {
+		font-size: 1.5rem;
+	}
 	
 	.sideBar{
 		width: 135px;
@@ -169,6 +175,9 @@ p{
 	}	
 	h2 {
 		font-size: 20px;
+	}
+	#menu li a {
+		font-size: 1.2rem;
 	}
 	
 	.sideBar{
