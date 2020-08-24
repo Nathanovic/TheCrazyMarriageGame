@@ -38,13 +38,16 @@ h1{
 }
 
 /* Menu bar settings */
+#title{
+	text-align: center;
+	flex-basis: 100%;
+}
 #menu {
 	list-style-type: none;
 	margin: 0;
 	padding: 0 0 1rem;
 	font-family: typewriter;
 }
-
 #menu li {
 	float: left;
 	
@@ -53,7 +56,6 @@ h1{
 	align-items: center;
 	margin: 0 16px;
 }
-
 #menu li a {
 	color: white;
 	font-size: 3vh;
@@ -80,12 +82,6 @@ h1{
 	background-image: url("../images/woodBackgroundSmall.jpg");
 }
 
-/* Menu */
-#title{
-	text-align: center;
-	flex-basis: 100%;
-}
-
 /* Side bars */
 .sideBar{
 	position: fixed;
@@ -100,6 +96,11 @@ h1{
 #leavesRight{
 	background-image: url("../images/leavesRight.png");
 	right: 0;
+}
+
+/* Gradient */
+#gradientBackground{
+	background-image: linear-gradient(#ded2b7,#f8f3ec);	
 }
 
 /* Screen size dependent sizing & positioning */
