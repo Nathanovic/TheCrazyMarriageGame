@@ -4,6 +4,8 @@ let progressScreenElement;
 let progressScreenImage;
 let progressScreenText;
 let progressScreenButtonText;
+let progressContinueButton;
+let progressFinalContainer;
 let showSpecialGuestFinishedScreen = false;
 const COMPLETION_IMAGE_SRC = "images/popUpScreens/invitationComplete.png";
     
@@ -57,11 +59,14 @@ function Load(){
 }
 
 function OnStartButton(){
-	document.getElementById("gameIntroScreen").style.display = "none";
 	progressScreenElement = document.getElementById("gameProgressScreen");
 	progressScreenImage = progressScreenElement.getElementsByTagName("img")[0];
 	progressScreenText = progressScreenElement.getElementsByTagName("p")[0];
 	progressScreenButtonText = progressScreenElement.getElementsByTagName("p")[1];
+	progressContinueButton = progressScreenElement.getElementsByTagName("button")[0];
+	progressFinalContainer = document.getElementById("finalScreenButtonContainer");
+	
+	document.getElementById("gameIntroScreen").style.display = "none";
 	progressScreenElement.style.display = "block";
 	progressScreenImage.src = "images/popUpScreens/gameProgressScreenImage" + targetItem + ".png";
 }
@@ -99,6 +104,16 @@ function OnItemClicked(itemIndex){
 	
 	// Test purposes only, this should never be visible to the player:
 	if (targetItem > TargetCount()){
+		progressContinueButton.style.display = "none";
+		progressFinalContainer.style.display = "block";
 		document.getElementById("progressText").innerHTML = "Je hebt het spel uitgespeeld!";
 	}
-} 
+}
+
+function OnDownloadInvitation(){
+	
+}
+
+function OnGoToWebsite(){
+	
+}

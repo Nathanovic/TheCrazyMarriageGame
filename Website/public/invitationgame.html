@@ -11,13 +11,17 @@
 
 <body onload="OnPageLoaded()"> 
 	<div class="informationScreen" id="gameIntroScreen">
-		<img src="images/gameIntroScreen.png"/>
+		<img src="images/popUpscreens/gameIntroScreen.png"/>
 		<button onclick="OnStartButton()"><p>Start de game!</p></button>
 	</div>
 	
 	<div class="informationScreen" id="gameProgressScreen">
-		<img src="images/gameIntroScreen.png"/>
-		<button onclick="OnContinueButton()"><p>Ik ga op zoek!</p></button>
+		<img src="images/popUpscreens/gameIntroScreen.png"/>
+		<button onclick="OnContinueButton()"><p>Ik ga op zoek!</p></button>        
+		<div id="finalScreenButtonContainer">
+            <button class="finalButton" onclick="OnDownloadInvitation()"><p>Download jouw unieke uitnodiging!</p></button>
+            <button class="finalButton" onclick="OnContinueButton()"><p>Ga naar de website</p></button>
+        </div>
 	</div>
 	
 	<div id="gameInfo">
