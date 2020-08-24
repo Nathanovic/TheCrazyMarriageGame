@@ -6,13 +6,12 @@ html {
   box-sizing: inherit;
 }
 html, body {
-	min-height: 100% !important;	
 	margin: 0 !important;
 	padding: 0 !important;
 	background-color: #ded2b7;
 }
-#wrapper{
-	min-height: 100% !important;
+#wrapper {
+	min-height: 100vh !important;
 }
 
 /* Text settings */
@@ -26,15 +25,20 @@ html, body {
 }
 h1, h2, h3, h4, h5 {
 	margin: .5rem 0;
-    font-weight: 500;
+    font-weight: bold;
     line-height: 1.2;
-}
-p, h2, h3, h4, h5 {
-	font-family: typewriter;	
 }
 h1{
 	font-family: flashbackDemo;
 	margin: .5rem 0 -0.5rem;
+}
+h2, h3, h4, h5 {
+	font-family: typewriter;	
+}
+p{
+	font-family: cambria;
+	font-size: 1.5rem;
+    line-height: 1.15;
 }
 
 /* Menu bar settings */
@@ -98,9 +102,17 @@ h1{
 	right: 0;
 }
 
-/* Gradient */
+/* Other */
 #gradientBackground{
 	background-image: linear-gradient(#ded2b7,#f8f3ec);	
+}
+#pageContent {
+	width: 1000px;
+	max-width: 80%;
+	margin: 2rem auto;
+}
+#pageContent img{
+	width: 100%;
 }
 
 /* Screen size dependent sizing & positioning */
