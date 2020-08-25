@@ -101,7 +101,7 @@ function OnItemClicked(itemIndex){
 function OpenFinalScreen(){
 	document.getElementById("gameCompletedScreen").style.display = "block";
 	if (screen.width < 650){
-		document.getElementById("gameCompletedScreen").getElementsByTagName("img")[0].src = "images/popUpscreens/invitationCompleteMobile.png";
+		document.getElementById("gameCompletedScreen").getElementsByTagName("img")[0].src = "images/popUpScreens/invitationCompleteMobile.png";
 	}
 }
 
