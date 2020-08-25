@@ -17,10 +17,14 @@
 	
 	<div class="informationScreen" id="gameProgressScreen">
 		<img src="images/popUpscreens/gameIntroScreen.png"/>
-		<button onclick="OnContinueButton()"><p>Ik ga op zoek!</p></button>        
+		<button onclick="OnContinueButton()"><p>Ik ga op zoek!</p></button>   
+	</div>
+	
+	<div class="informationScreen" id="gameCompletedScreen">
+		<img src="images/popUpScreens/invitationComplete.png"/>
 		<div id="finalScreenButtonContainer">
-            <button class="finalButton" onclick="OnDownloadInvitation()"><p>Download jouw unieke uitnodiging!</p></button>
-            <button class="finalButton" onclick="OnContinueButton()"><p>Ga naar de website</p></button>
+            <button class="finalButton" onclick="OnDownloadInvitationButton()" target="_blank"><p>Download de trouwkaart!</p></button>
+            <button class="finalButton" onclick="OnGoToWebsiteButton()"><p>Ga naar de website</p></button>
         </div>
 	</div>
 	
@@ -44,8 +48,9 @@
 	let targetDescriptions = ["Zoek Arjanna's sleutel!", 
 		"Zoek de agenda van Nathan", 
 		"Waar is het mes gebleven?", 
-		"Zoek het kleed"];
-	let specialGuestTargetDescriptions = ["Waar is het bestek gebleven?"];
+		"Zoek het kleed",
+		"Waar is het bestek?"];
+	const SPECIAL_GUEST_ITEM_COUNT = 1;
 	
 	function OnPageLoaded(){
 		Load();

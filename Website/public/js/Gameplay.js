@@ -4,26 +4,11 @@ let progressScreenElement;
 let progressScreenImage;
 let progressScreenText;
 let progressScreenButtonText;
-let progressContinueButton;
 let progressFinalContainer;
-let showSpecialGuestFinishedScreen = false;
-const COMPLETION_IMAGE_SRC = "images/popUpScreens/invitationComplete.png";
-    
-function GetTargetDescription(){
-	if (isSpecialGuest && targetItem){}// special guest description
-}
-	
-function TargetCount(){
-	let targetCount = targetDescriptions.length;
-	if (isSpecialGuest){
-		targetCount += specialGuestTargetDescriptions.length;
-	}
-	return targetCount;
-}
+
+let targetCount;
 
 function Load(){
-	showSpecialGuestFinishedScreen = false;
-	
 	// Add css
 	let link = document.createElement("link");
 	link.type = "text/css";
@@ -53,8 +38,16 @@ function Load(){
 		}
 	}
 	
+	// Set target count
+	if (isSpecialGuest){
+		targetCount = targetDescriptions.length;
+	}
+	else{
+		targetCount = targetDescriptions.length - SPECIAL_GUEST_ITEM_COUNT;		
+	}
+	
 	// Set the game info text
-	document.getElementById("progressText").innerHTML = "0/" + TargetCount();
+	document.getElementById("progressText").innerHTML = "1/" + targetCount;
 	document.getElementById("targetDescription").innerHTML = targetDescriptions[0];
 }
 
@@ -62,8 +55,7 @@ function OnStartButton(){
 	progressScreenElement = document.getElementById("gameProgressScreen");
 	progressScreenImage = progressScreenElement.getElementsByTagName("img")[0];
 	progressScreenText = progressScreenElement.getElementsByTagName("p")[0];
-	progressScreenButtonText = progressScreenElement.getElementsByTagName("p")[1];
-	progressContinueButton = progressScreenElement.getElementsByTagName("button")[0];
+	progressScreenButtonText = progressScreenElement.getElementsByTagName("p")[0];
 	progressFinalContainer = document.getElementById("finalScreenButtonContainer");
 	
 	document.getElementById("gameIntroScreen").style.display = "none";
@@ -72,48 +64,56 @@ function OnStartButton(){
 }
 
 function OnContinueButton(){
-	if (targetItem <= TargetCount()){
+	if (targetItem <= targetCount){
 		progressScreenElement.style.display = "none";
 		document.getElementById("targetDescription").innerHTML = targetDescriptions[targetItem-1];
 	}
-	else{
-		if (!progressScreenImage.src.includes(COMPLETION_IMAGE_SRC)){			
-			progressScreenImage.src = COMPLETION_IMAGE_SRC;
-			return;
-		}		
-		window.open("RSVP.html");
+	else{	
+		OpenFinalScreen();
 	}
 }
 
 function OnItemClicked(itemIndex){
-	if (targetItem > TargetCount()) {return;}
+	if (targetItem > targetCount) {return;}
 	if (progressScreenElement.style.display != "none") {return;}
 	if (itemIndex != targetItem) {return;}
 	
-	document.getElementById("progressText").innerHTML = targetItem + "/" + TargetCount();
+	document.getElementById("progressText").innerHTML = (targetItem + 1) + "/" + targetCount;
 	document.getElementById("targetDescription").innerHTML = "";
 	targetItem ++;
 	
 	progressScreenElement.style.display = "block";
-	if (targetItem <= TargetCount() || isSpecialGuest){
+	if (targetItem <= targetCount || isSpecialGuest){
 		progressScreenImage.src = "images/popUpScreens/gameProgressScreenImage" + targetItem + ".png";
+		if (targetItem > targetCount){
+			progressScreenButtonText.innerHTML = "Ga door";
+		}
 	}
 	else{
-		progressScreenImage.src = COMPLETION_IMAGE_SRC;
+		OpenFinalScreen();
 	}
 	
-	// Test purposes only, this should never be visible to the player:
-	if (targetItem > TargetCount()){
-		progressContinueButton.style.display = "none";
-		progressFinalContainer.style.display = "block";
-		document.getElementById("progressText").innerHTML = "Je hebt het spel uitgespeeld!";
+	if (targetItem > targetCount){
+		document.getElementById("progressText").innerHTML = "Je hebt het spel uitgespeeld! (but where is the progress screen??)";
 	}
 }
 
-function OnDownloadInvitation(){
-	
+function OpenFinalScreen(){
+	document.getElementById("gameCompletedScreen").style.display = "block";
+	if (screen.width < 650){
+		document.getElementById("gameCompletedScreen").getElementsByTagName("img")[0].src = "images/popUpscreens/invitationCompleteMobile.png";
+	}
 }
 
-function OnGoToWebsite(){
-	
+function OnDownloadInvitationButton(){
+	if (isSpecialGuest){
+		window.open("images/InvitationSpecialGuest.pdf");		
+	}
+	else{
+		window.open("images/InvitationStandard.pdf");			
+	}
+}
+
+function OnGoToWebsiteButton(){
+	window.open("RSVP.html");
 }

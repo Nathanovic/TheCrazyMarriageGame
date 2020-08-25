@@ -28,7 +28,7 @@ body{
 
 button:not(.finalButton){
 	position: fixed;
-	bottom: 4.8%;
+	bottom: 4%;
     left: 50%;
     transform: translate(-50%, 0);
 }
@@ -50,14 +50,14 @@ button{
 button:hover:not(.finalButton), button:active:not(.finalButton){
 	width: 260px;
 	height: 60px;
-	bottom: 4.8%;
+	bottom: 4%;
     transform: translate(-50%, 5px);
 	font-size: 2.75vh;
 }
 
 #finalScreenButtonContainer{
 	position: fixed;
-	bottom: 8%;
+	bottom: 4%;
 	width: 100%;
 	padding: 0 2rem 0 2rem;
 	
@@ -65,18 +65,24 @@ button:hover:not(.finalButton), button:active:not(.finalButton){
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    display: flex;
-	flex-flow: row wrap;
+	display: flex;
 	justify-content: center;
-	
-	display: none;
+	flex-flow: row wrap;
+	align-items: center;
 }
 
-#finalScreenButtonContainer button{
-	position: static !important;
-	bottom: auto;
-    left: auto;
-	flex: 0.5;
+#finalScreenButtonContainer button:first-child{
+	height: 70px;
+	margin: 0 0.5rem 0 0;
+}
+
+#finalScreenButtonContainer button:not(:first-child){
+	width: 220px;
+	margin: 0 0 0 0.5rem;
+}
+
+#gameCompletedScreen{
+	display: none;
 }
 
 #gameProgressScreen{
